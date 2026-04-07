@@ -22,15 +22,43 @@ Visualization: Plot the message signal, carrier signal, DSBSC modulated signal, 
 
 • Execute the code • If any Error, correct it in code and execute again • Verify the generated waveform using Tabulation and Model Waveform
 
-Model Waveform
+Model Waveform:
+
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/736bef01-c500-4225-85e4-92c4e2fdf692" />
 
-Program
+Program:
+```
+Am=7.2;
+fm=418;
+Ac=14.4;
+fc=4180;
+fs=41800;
+t=0:1/fs:2/fm;
+m=Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,m);
+c=Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,c);
+s1=(Ac+m).*cos(2*3.14*fc*t);
+s2=(Ac-m).*cos(2*3.14*fc*t);
+s=s1-s2;
+subplot(3,1,3);
+plot(t,s);
+```
 
-Output Graph
+Output Graph:
 
-Tablular Column
+<img width="610" height="460" alt="image" src="https://github.com/user-attachments/assets/b2ce8554-abbc-4b06-883e-b19e3d27bbf5" />
 
-Result
+
+Tablular Column:
+
+<img width="1484" height="750" alt="image" src="https://github.com/user-attachments/assets/051b4414-365f-43e3-8217-b7202b07ee52" />
+
+
+Result:
+
+<img width="1580" height="660" alt="image" src="https://github.com/user-attachments/assets/f5cebdd0-2b7f-424f-b772-e0e7fbd39d28" />
 
 Thus the DSB-SC-AM Modulation and Demodulation is generated.
